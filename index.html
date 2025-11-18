@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper & Encryption Tool</title>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Web Scraper & Encryption Tool</h1>
+            <p class="subtitle">Scrape, Encrypt, and Store Web Data Securely</p>
+        </header>
+
+        <div id="alertBox"></div>
+
+        <div class="grid">
+            <!-- Scraping Section -->
+            <div class="card">
+                <h2> Step 1: Scrape Website</h2>
+                <input type="url" id="urlInput" 
+                       placeholder="Enter URL (e.g., https://example.com)" 
+                       value="https://example.com">
+
+                <button id="scrapeBtn" onclick="scrapeWebsite()">Scrape Website</button>
+
+                <div class="example-urls">
+                    <strong>💡 Try these URLs:</strong>
+                    <p onclick="setUrl('https://example.com')">• https://example.com</p>
+                    <p onclick="setUrl('https://en.wikipedia.org/wiki/Web_scraping')">• Wikipedia – Web Scraping</p>
+                    <p onclick="setUrl('https://httpbin.org/html')">• httpbin HTML Page</p>
+                </div>
+
+                <div id="scrapedSection" class="hidden">
+                    <h3>Scraped Data:</h3>
+
+                    <div class="stats">
+                        <span> Words: <strong id="wordCount">0</strong></span>
+                        <span> Characters: <strong id="charCount">0</strong></span>
+                    </div>
+
+                    <textarea id="scrapedData" readonly></textarea>
+
+                    <button class="download-btn" onclick="downloadData('scrapedData', 'scraped_data.txt')">
+                        ⬇️ Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Encryption Section -->
+            <div class="card">
+                <h2>🔒 Step 2: Encrypt Data</h2>
+
+                <input type="text" id="encryptKey" placeholder="Encryption Key (min 8 chars)">
+                <button class="btn-encrypt" onclick="encryptData()">Encrypt & Save</button>
+
+                <div id="encryptedSection" class="hidden">
+                    <h3>Encrypted Data:</h3>
+                    <textarea id="encryptedData" readonly></textarea>
+
+                    <button class="download-btn" onclick="downloadData('encryptedData','encrypted_data.txt')">
+                        ⬇️ Download
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decryption Section -->
+        <div class="card">
+            <h2>🔓 Step 3: Decrypt Data</h2>
+
+            <button class="btn-decrypt" onclick="decryptData()">Decrypt Data</button>
+
+            <div id="decryptedSection" class="hidden">
+                <h3>Decrypted Data:</h3>
+                <textarea id="decryptedData" readonly></textarea>
+            </div>
+        </div>
+
+        <!-- Saved Items -->
+        <div class="card">
+            <div class="card-header">
+                <h2> Saved Items</h2>
+                <button class="btn-load" onclick="loadSavedItems()">Load from Database</button>
+            </div>
+
+            <div id="savedItems" class="saved-items">
+                <p class="empty-msg">No saved items. Connect backend to load data.</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p><strong>⚠️ Important Notes:</strong></p>
+            <p>• AES-256 encryption used</p>
+            <p>• Some websites may block scraping</p>
+            <p>• Respect robots.txt and Terms of Service</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
