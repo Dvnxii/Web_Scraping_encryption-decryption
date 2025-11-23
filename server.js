@@ -21,7 +21,7 @@ app.use(cors({
 app.use(express.json());
 
 // MongoDB Connection
-const mongoose = require("mongoose");
+
 
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Connected"))
@@ -472,5 +472,6 @@ app.listen(PORT, () => {
   console.log(`${'='.repeat(50)}\n`);
 
 });
+
 
 
