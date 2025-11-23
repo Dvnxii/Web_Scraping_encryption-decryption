@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://webscraper-backend.onrender.com/api';
+
 let scrapedText = "";
 
 function showAlert(message, type = "error") {
@@ -167,3 +168,4 @@ function downloadData(id, filename) {
 
     URL.revokeObjectURL(url);
 }
+
