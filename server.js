@@ -12,7 +12,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`\n${'='.repeat(50)}`);
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📡 API endpoints available at http://localhost:${PORT}/api`);
+  console.log(`${'='.repeat(50)}\n`);
 });
 
 
@@ -477,6 +480,7 @@ app.listen(PORT, () => {
   console.log(`${'='.repeat(50)}\n`);
 
 });
+
 
 
 
