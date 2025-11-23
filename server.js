@@ -16,14 +16,12 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/webscraper', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('✅ Connected to MongoDB');
-}).catch(err => {
-  console.error('❌ MongoDB connection error:', err);
-});
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb+srv://Divyanshi:Divy%40nshi2608@cluster0.3pblzb2.mongodb.net/webscraper")
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.log("MongoDB Error:", err));
+
 
 // MongoDB Schema
 const ScrapedDataSchema = new mongoose.Schema({
@@ -467,4 +465,5 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`📡 API endpoints available at http://localhost:${PORT}/api`);
   console.log(`${'='.repeat(50)}\n`);
+
 });
