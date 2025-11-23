@@ -1,4 +1,4 @@
-const API_URL = 'https://webscraper-backend.onrender.com/api';
+const API_URL = 'https://webscraper-backend-5pam.onrender.com';
 
 let scrapedText = "";
 
@@ -168,4 +168,5 @@ function downloadData(id, filename) {
 
     URL.revokeObjectURL(url);
 }
+
 
