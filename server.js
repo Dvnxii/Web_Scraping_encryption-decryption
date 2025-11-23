@@ -12,13 +12,18 @@ const app = express();
 const PORT = 3000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://dvnxii.github.io',
+  methods: ['GET', 'POST', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // MongoDB Connection
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("MongoDB Error:", err));
 
@@ -467,4 +472,5 @@ app.listen(PORT, () => {
   console.log(`${'='.repeat(50)}\n`);
 
 });
+
 
