@@ -18,7 +18,7 @@ app.use(express.json());
 // MongoDB Connection
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://Divyanshi:Divy%40nshi2608@cluster0.3pblzb2.mongodb.net/webscraper")
+mongoose.connect(process.env.MONGO_URL);
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("MongoDB Error:", err));
 
@@ -467,3 +467,4 @@ app.listen(PORT, () => {
   console.log(`${'='.repeat(50)}\n`);
 
 });
+
