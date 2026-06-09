@@ -1,6 +1,7 @@
 Web Scraping + Encryption/Decryption Tool
 A full-stack web application that combines web scraping with encryption and decryption — scrape content from target websites and secure it using cryptographic techniques, all through a clean browser-based interface.
 
+
 Features
 Web Scraping — Extract content from target websites via a Node.js backend
 Encrypt Data — Secure scraped or custom text using encryption algorithms
@@ -24,6 +25,7 @@ Web_Scraping_encryption-decryption/
 ├── .gitignore            
 ├── package.json          
 └── package-lock.json      
+
 
 How It Works
 Web Scraping
